@@ -46,7 +46,7 @@ for i in range(16):
 cont_miss = 0
 cont_hits = 0
 
-def inicializacion_cache(): #inicializamos el cache
+def imprimir_cache(): #inicializamos el cache
 
     for i in range(16):
         print(f"{i} {cache[i]}")
@@ -73,22 +73,42 @@ def inicializar_ram():
     # Crea una copia del archivo original en la misma carpeta
     shutil.copyfile(original_file, copy_file)
 
-def cacheController(dir_binario, dato): #
-
+def cacheController(direccion_random, dato): #controlador del cache
+    dir_binario = format(direccion_random, '0' + str(DIRECCION_BINARIO) + 'b')
     dir_mod = dir_binario[3:11]
     setCache = dir_mod % 16
     
     offset = dir_binario[0:3]
     index = int(dir_binario[3:7],2)
     tag = dir_binario[7:11]
+    tagh = hex(int(tag, 2))
     if dato == None: #en caso de ser read
-        if cache[index][0][0] == None:
-            cont_miss += 1
-            
-            pass
-        else:
-            
-            pass
+        for i in range(2): #para buscar en las dos vias
+            if cache[index][i][0] == None:
+                cont_miss += 1
+                offset = int(offset,2) #pasamos offset a binario
+                direccion_random = direccion_random - offset #le restamos a nuestro numero el offset en binario para que nos de el principio del rango
+
+                if cache[index][0][0] == None and cache[index][1][0] == None: #si la via 0 esta ocupada y la 1 desocupada entonces...
+                    cache[index][1][0] = 1 #actualiza el bit de validacion
+                    cache[index][1][1] = tagh
+
+                for j in range(8):
+                    # Abrir el archivo en modo lectura
+                    with open("ramc.txt", "r") as archivo:
+                        # Leer todas las líneas en una lista
+                        lineas = archivo.readlines()
+                        # Buscar la línea número de direccion_random
+                        if direccion_random <= len(lineas):
+                            linea_buscada = lineas[direccion_random]
+                            direccion_random += 1
+                            if cache[index][0][0] != None and cache[index][1][0] == None:
+                                cache[index][1][3].append(linea_buscada)
+
+                
+            else:
+                
+                pass
             
         
     else:
@@ -103,12 +123,11 @@ def numero_casos():
 
 def direccion_random(caso):
     direccion_random = random.randrange(0,2047)
-    dir_binario = format(direccion_random, '0' + str(DIRECCION_BINARIO) + 'b')
     if caso == 0: #si es read
-        cacheController(dir_binario, None)
+        cacheController(direccion_random, None)
     elif caso == 1: #si es write
         dato_random = ''.join(random.choices('ABCDEFGHIJKLMNOPQRSTUVWYXZ', k=8))
-        cacheController(dir_binario,dato_random)
+        cacheController(direccion_random,dato_random)
 
 
 def ejecucion_procesos(procesos):
@@ -121,24 +140,25 @@ def menu():
     print("2. Ejecutar programa")
     print("3. Salir")
 
-while True:
-    menu()
-    opcion = int(input("\n\nSelecciona una opción: "))
-    
-    if opcion == 1:
-        inicializar_ram()
-    elif opcion == 2:
-        inicializacion_cache()
-        ejecucion_procesos(procesos)
-    elif opcion == 3:
-        print("Saliendo del menú...")
-        break
-    else:
-        print("Opción inválida. Selecciona una opción del 1 al 3.")
+
 
 
 def main():
-    menu()
+    while True:
+        menu()
+        opcion = int(input("Selecciona una opción: "))
+    
+        if opcion == 1:
+            inicializar_ram()
+        elif opcion == 2:
+            procesos = int(input("Numero de procesos: "))
+            imprimir_cache()
+            ejecucion_procesos(procesos)
+        elif opcion == 3:
+            print("Saliendo del menú...")
+            break
+        else:
+            print("Opción inválida. Selecciona una opción del 1 al 3.")
 
 main()
 
