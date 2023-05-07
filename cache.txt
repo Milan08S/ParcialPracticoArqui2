@@ -1,0 +1,48 @@
+Conjunto: 0
+[1, '1010', ['07804512', '71392465', '05729336', '21863624', '29319976', '10268229', '44682653', '90811455']]
+[1, '0110', ['60818694', '27861945', '81952725', '71765452', '68408991', '81343147', 'FBKNCQMB', '02029796']]
+Conjunto: 1
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 2
+[1, '0100', ['12555402', '67469029', '24986311', '98272832', '73337524', '84988078', '41078950', '12594458']]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 3
+[1, '0001', ['81321178', '76559059', '83901165', '98883956', '70812925', '23919223', '83282814', '34638627']]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 4
+[1, '0111', ['56312867', '57086130', '16871368', '46358261', '13779214', '28689469', '57691259', '30890941']]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 5
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 6
+[1, '1100', ['20550514', '82811050', '66632414', '80770258', '56596150', '14341763', '33971310', '94198851']]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 7
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 8
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 9
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 10
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 11
+[1, '1100', ['52922440', 'JUAOENLZ', '92279757', '83564051', '69845851', '80411658', '61677601', '56794215']]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 12
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 13
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 14
+[1, '1110', ['89888296', '01878906', '10731440', '76694477', '71983071', '12338295', '64455915', '92642754']]
+[None, None, [None, None, None, None, None, None, None, None]]
+Conjunto: 15
+[None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
