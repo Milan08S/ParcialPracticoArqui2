@@ -213,6 +213,7 @@ def direccion_random(caso):
 
 def crearCachetxt():
     with open('cache.txt', 'w') as archivo:
+        archivo.write(f"Cache[index][way][Valid, Tag, [Data(x8)]]\n")
         for clave, valor in cache.items():
             archivo.write(f"\nConjunto: {clave}\n")
             for lista in valor:
