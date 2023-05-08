@@ -1,48 +1,64 @@
+
 Conjunto: 0
-[1, '1010', ['07804512', '71392465', '05729336', '21863624', '29319976', '10268229', '44682653', '90811455']]
-[1, '0110', ['60818694', '27861945', '81952725', '71765452', '68408991', '81343147', 'FBKNCQMB', '02029796']]
+[1, '0000', ['65833359', '19332591', '93321330', '83151925', 'ETTCACKT', '39598164', '76463524', '90791509']]
+[None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 1
+[1, '0100', ['55758350', '21743042', '95621697', '60291310', '78994223', '06279930', '86063023', '56671492']]
 [None, None, [None, None, None, None, None, None, None, None]]
-[None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 2
-[1, '0100', ['12555402', '67469029', '24986311', '98272832', '73337524', '84988078', '41078950', '12594458']]
+[1, '0100', ['KOJOAKVO', '47590238', '93038243', '91458782', '33006166', '50584970', '95696778', '10086041']]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 3
-[1, '0001', ['81321178', '76559059', '83901165', '98883956', '70812925', '23919223', '83282814', '34638627']]
-[None, None, [None, None, None, None, None, None, None, None]]
+[1, '0010', ['80416978', '11909624', '31494328', '47656955', '65008905', '70547603', '85515606', '02724009']]
+[1, '1101', ['01822686', '00661658', '63111343', '91298323', '05474584', '55629564', '98838115', 'WNRYMBEV']]
+
 Conjunto: 4
-[1, '0111', ['56312867', '57086130', '16871368', '46358261', '13779214', '28689469', '57691259', '30890941']]
+[1, '0100', ['55919042', '72876519', '47518952', '09809031', '12463207', 'ZVKDKFQI', '23652935', '77683249']]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 5
 [None, None, [None, None, None, None, None, None, None, None]]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 6
-[1, '1100', ['20550514', '82811050', '66632414', '80770258', '56596150', '14341763', '33971310', '94198851']]
 [None, None, [None, None, None, None, None, None, None, None]]
+[None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 7
+[1, '1101', ['36428307', '48993237', '55803637', '80790545', '14913626', '81842879', '23652997', '85298176']]
 [None, None, [None, None, None, None, None, None, None, None]]
-[None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 8
+[1, '1011', ['67758185', '68492699', '87414916', '05512252', '01559321', '86216913', '12075229', '04735396']]
 [None, None, [None, None, None, None, None, None, None, None]]
-[None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 9
-[None, None, [None, None, None, None, None, None, None, None]]
-[None, None, [None, None, None, None, None, None, None, None]]
+[1, '0011', ['80046723', '25933971', '72386438', '50624559', '37502151', '19119129', '35739548', '84305784']]
+[1, '1011', ['43058652', '51461265', '57811787', '36794598', '88950192', '16611521', '97117889', '51257356']]
+
 Conjunto: 10
 [None, None, [None, None, None, None, None, None, None, None]]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 11
-[1, '1100', ['52922440', 'JUAOENLZ', '92279757', '83564051', '69845851', '80411658', '61677601', '56794215']]
+[1, '1110', ['19900728', '43167143', '53188457', '45678052', '32986828', '60352666', '01592427', '93598215']]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 12
 [None, None, [None, None, None, None, None, None, None, None]]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 13
-[None, None, [None, None, None, None, None, None, None, None]]
-[None, None, [None, None, None, None, None, None, None, None]]
+[1, '0111', ['36231587', '25553416', '65761964', '78231661', '28921615', '74563495', '50466269', 'QGKSUPPB']]
+[1, '1110', ['89692639', '53068642', '05621358', '51058898', '63832135', '16184275', '11150530', '66389609']]
+
 Conjunto: 14
-[1, '1110', ['89888296', '01878906', '10731440', '76694477', '71983071', '12338295', '64455915', '92642754']]
+[1, '0100', ['11150530', '66389609', '07102002', '64996133', '07479802', '94950132', '03058874', '06620050']]
 [None, None, [None, None, None, None, None, None, None, None]]
+
 Conjunto: 15
-[None, None, [None, None, None, None, None, None, None, None]]
+[1, '1000', ['59752276', '76153133', '44614423', '32701078', '15500022', '49302333', '83831406', '49251566']]
 [None, None, [None, None, None, None, None, None, None, None]]

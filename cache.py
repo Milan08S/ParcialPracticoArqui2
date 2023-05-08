@@ -20,9 +20,6 @@
 # |  4 bits   |   4 bits  |  3 bits |
 # ----------------------------------
 
-
-
-
 # total de bloques en la cache: 32 bloques
 # numero de sets 16, dos bloques por cada set
 # tamaño offset: 3 bits
@@ -94,7 +91,8 @@ def copiarDato(way,tag,index,Rango_inicio):
 
 def cargarDatoCache(tag,index,offset,direccion_random):
     offset = int(offset,2) # pasamos offset a decimal
-    Rango_inicio = direccion_random - offset # le restamos a nuestro numero el offset en binario para que nos de el principio del rango
+    Rango_inicio = direccion_random - offset # le restamos a nuestro numero el offset en binario para
+    #que nos de el principio del rango
 
     flag, _ = searchCache(tag,index)
 
@@ -131,9 +129,6 @@ def actualizarDatoRam(direccion_random,dato):
     os.remove("ramc.txt")
     os.rename("temp.txt", "ramc.txt")
 
-
-    
-
 def actualizarDatoCache(way,index,offset,dato):
     offset = int(offset, 2)
     cache[index][way][2][offset] = dato
@@ -146,11 +141,11 @@ def searchCache(tag,index):
         flag = 1 # read_miss
     else:
 
-        if cache[index][0][1] == str(tag): # si exite un bloque con un dato valido se compara su tag
+        if cache[index][0][1] == str(tag) and cache[index][0][0] == 1: # si exite un bloque con un dato valido se compara su tag
             #print(" EL DATO  EN LA VIA 0")
             flag = 0 # read_hit
             way = 0
-        elif cache[index][1][1] == str(tag):
+        elif cache[index][1][1] == str(tag) and cache[index][1][0] == 1:
             #print(" EXISTE EN LA VIA 1")
             flag = 0 # read_hit
             way = 1
@@ -163,14 +158,14 @@ def searchCache(tag,index):
 def cacheController(direccion_random, dato): #controlador del cache
     global cont_hits, cont_miss
 
-    dir_binario = format(direccion_random, '0' + str(DIRECCION_BINARIO) + 'b')
+    dir_binario = format(direccion_random, '0' + str(DIRECCION_BINARIO) + 'b') #cambiamo el formato de entero a binario
     direccion_random += 1 
 
-    offset = dir_binario[0:3]
-    index = int(dir_binario[3:7],2)
-    tag = dir_binario[7:11]
+    offset = dir_binario[0:3] #sacamos el offset
+    index = int(dir_binario[3:7],2) #sacamos el index
+    tag = dir_binario[7:11] #sacamos el tag
     
-    flag, _ = searchCache(tag,index)
+    flag, _ = searchCache(tag,index) #usamos la funcion searchCache()
 
     # Caso: read
     if dato == None: 
@@ -183,14 +178,16 @@ def cacheController(direccion_random, dato): #controlador del cache
     # Caso: write
     else: 
         if flag == 0: # Read - Hit
-            print("WRITE HIT: " + str(dato))
+            print(f"\nWRITE HIT {dato}")
+            print(f"DIRECCION GENERADA {direccion_random}")
             cont_hits += 1 # Write - Hit
             #print("ESTE ES EL DATO 1: " + str(dato))
             actualizarDatoRam(direccion_random,dato) # actualiza la memoria principal
             _,way = searchCache(tag,index)
             actualizarDatoCache(way,index,offset,dato) # actualiza el dato en la cache y memoria principal (write - throught)
         else: # Read - Miss
-            print("WRITE MISS: " + str(dato))
+            print(f"\nWRITE MISS {dato} ")
+            print(f"DIRECCION GENERADA {direccion_random}")
             cont_miss += 1 # Write - Miss
             #print("ESTE ES EL DATO 2: " + str(dato))
             cargarDatoCache(tag,index,offset, direccion_random) # carga el dato que no estaba presente en la cache
@@ -217,7 +214,7 @@ def direccion_random(caso):
 def crearCachetxt():
     with open('cache.txt', 'w') as archivo:
         for clave, valor in cache.items():
-            archivo.write(f"Conjunto: {clave}\n")
+            archivo.write(f"\nConjunto: {clave}\n")
             for lista in valor:
                 archivo.write(str(lista) + '\n')
 
@@ -226,13 +223,13 @@ def ejecucion_procesos(procesos):
         caso = numero_casos()
         direccion_random(caso)    
 
+def miss_rate():
+    return cont_hits / (cont_hits + cont_miss) * 100, cont_miss / (cont_miss + cont_hits) * 100
+
 def menu():
-    print("1. Inicializar Memoria Ram")
+    print("\n\n1. Inicializar Memoria Ram")
     print("2. Ejecutar programa")
     print("3. Salir")
-
-
-
 
 def main():
     while True:
@@ -245,9 +242,13 @@ def main():
             procesos = int(input("Numero de procesos: "))
             ejecucion_procesos(procesos)
             imprimir_cache()
-            print(cont_hits)
-            print(cont_miss)
+            print(f"\n\nInformacion del Programa:")
+            print(f"\nNumero de HITS {cont_hits}")
+            print(f"Numero de MISSES {cont_miss}")
+            total_hits, total_miss = miss_rate()
+            print(f"\nEl porcentaje de miss fue {total_miss}\nEl porcentaje de hits fue {total_hits}")
             crearCachetxt()
+            break
             
         elif opcion == 3:
             print("Saliendo del menú...")
